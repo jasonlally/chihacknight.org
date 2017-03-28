@@ -1,0 +1,26 @@
+---
+layout: none
+---
+
+BEGIN:VCALENDAR
+PRODID;X-RICAL-TZSOURCE=TZINFO:-//com.denhaven2/NONSGML ri_cal gem//EN
+CALSCALE:GREGORIAN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID;X-RICAL-TZSOURCE=TZINFO:America/Chicago
+BEGIN:DAYLIGHT
+DTSTART:{{page.date | date: "%Y%m%dT180000" }}
+RDATE:{{page.date | date: "%Y%m%dT180000" }}
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DTEND;TZID=America/Chicago;VALUE=DATE-TIME:{{page.date | date: "%Y%m%dT213000" }}
+DTSTART;TZID=America/Chicago;VALUE=DATE-TIME:{{page.date | date: "%Y%m%dT180000" }}
+DESCRIPTION:{{page.title}}
+SUMMARY:{{page.description}}
+LOCATION:Braintree 222 W Merchandise Mart Plz Chicago IL 8th floor
+END:VEVENT
+END:VCALENDAR
